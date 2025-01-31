@@ -1,0 +1,38 @@
+/* .background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+} */
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Ensure the container is above other content if necessary */
+  overflow: hidden;
+}
+
+.background-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Higher z-index to be below the overlay */
+}
+
+.noise-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("noise.png");
+  background-repeat: repeat; /* Ensures the image repeats across the whole overlay */
+  z-index: 3; /* Overlay above the canvas */
+  pointer-events: none; /* Allows clicks to pass through to the canvas below */
+}
